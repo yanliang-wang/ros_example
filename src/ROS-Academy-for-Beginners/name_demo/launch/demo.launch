@@ -1,0 +1,10 @@
+<launch>
+  <!--全局参数serial-->
+  <param name="serial" value="5" />
+  <node name="name_demo" pkg="name_demo" type="name_demo"
+   output="screen">
+    <!--局部参数serial-->
+    <param name="serial" value="10" /> <!--会生成/name_demo/serial的param  name_demo是局部命名空间的名字，是node的name  -->
+
+  </node>
+</launch>

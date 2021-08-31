@@ -1,0 +1,1 @@
+xbot-u.urdf.xacro与xbot-u.urdf_dae.xacro的区别在与，里面对模型的引用是.obj与.dae的区别（猜想可能是因为rviz和gazebo里导入模型时要求的格式不同）
