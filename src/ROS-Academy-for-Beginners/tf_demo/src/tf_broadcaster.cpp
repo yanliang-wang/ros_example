@@ -19,7 +19,7 @@ int main(int argc, char** argv){
     //输入欧拉角，转化成四元数在终端输出
     q.setRPY(roll,pitch,yaw);
     //qw=tf::createQuaternionMsgFromRollPitchYaw(roll,pitch,yaw);方法2
-    transform.setOrigin(tf::Vector3(x,y,z));
+    transform.setOrigin(tf::Vector3(x,y,z));  // ATTENTION: 发布的transformation是从child到parent的变换，这里是从link1到base_link的变换
     transform.setRotation(q);
     std::cout<<"发布tf变换：sendTransform函数"<<std::endl;
     br.sendTransform(tf::StampedTransform(transform,ros::Time::now(),"base_link","link1"));
