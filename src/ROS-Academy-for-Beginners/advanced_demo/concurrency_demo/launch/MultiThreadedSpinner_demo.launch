@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="concurrency_demo" type="concurrency_pub" name="concurrency_pub" output="screen"/>
+    <node pkg="concurrency_demo" type="sub_MultiThreadedSpinner" name="sub_MultiThreadedSpinner" output="screen" 
+            args="2"/>
+</launch>

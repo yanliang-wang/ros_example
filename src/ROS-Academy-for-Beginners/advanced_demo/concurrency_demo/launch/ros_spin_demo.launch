@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="concurrency_demo" type="concurrency_pub" name="concurrency_pub" output="screen"/>
+    <node pkg="concurrency_demo" type="sub_ros_spin" name="sub_ros_spin" output="screen"/>
+</launch>

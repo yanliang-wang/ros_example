@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="concurrency_demo" type="concurrency_pub" name="concurrency_pub" output="screen"/>
+    <node pkg="concurrency_demo" type="sub_callback_queue" name="sub_callback_queue" output="screen"/>
+</launch>
