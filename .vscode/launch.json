@@ -11,6 +11,12 @@
             "type": "ros",
             "request": "launch",
             "target": "${workspaceFolder}/src/ROS-Academy-for-Beginners/topic_demo/launch/test.launch"
+        },
+        {
+            "name": "ROS: Launch test",
+            "type": "ros",
+            "request": "launch",
+            "target": "${workspaceFolder}/src/test/test_demo/launch/test.launch"
         }
     ]
 }

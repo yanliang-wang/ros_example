@@ -1,5 +1,24 @@
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 # ROS example
+
 ROS是一个功能很强大的工具，这个仓库包含了ROS的一些常用功能的使用demo，还有一些进阶功能的使用demo，便于快速进行ROS开发。除此之外，还包括一些ROS工具的介绍便于进行ROS工程的调试，enjoy it!
+
+- [ROS example](#ros-example)
+  - [Installation](#installation)
+  - [Adcanced](#adcanced)
+    - [1. roscpp Timer(定时器)](#1-roscpp-timer定时器)
+  - [Tricks](#tricks)
+  - [Convenient ROS packages](#convenient-ros-packages)
+
+## Installation
+
+```bash
+git clone https://github.com/yanliang-wang/ros_example.git 
+cd ros_example
+rosdep install --from-paths src --ignore-src --rosdistro=melodic
+catkin_make
+```
 
 
 
@@ -51,7 +70,22 @@ ROS是一个功能很强大的工具，这个仓库包含了ROS的一些常用�
 
 2. rviz显示点（位置，frontier等等）
 
-   可以使用点云pcl::PointXYZI的来表示一个点，另外intensity可以表示想给的颜色，在rviz中的intensity显示模式可以自己的进行颜色的映射。
+   可以使用点云pcl::PointXYZI的来表示一个点，另外intensity可以表示想给的颜色，在rviz中的intensity显示模式可以自动的进行颜色的映射，可视化效果很好。
+
+3. 快速部署ROS包依赖环境
+
+   - 官方依赖（可以通过apt install安装的）：在ROS包的package.xml里写出这个包的依赖，然后通过[rosdep](http://wiki.ros.org/rosdep) install来安装一个包或者多个包的依赖
+
+     ```bash
+     rosdep install PACKAGE # 安装一个包的依赖
+     rosdep install --from-paths src --ignore-src -r # 安装src下所有ROS包的依赖
+     ```
+
+   - 非官方依赖（通过git下载的）：参考[rosinstall file format](https://docs.ros.org/en/independent/api/rosinstall/html/rosinstall_file_format.html)写XXX.rosinstall文件，然后通过[rosinstall](http://wiki.ros.org/rosinstall)来安装
+
+     ```bash
+     rosinstall DEPENDENCY_LOCATION XXX.rosinstall
+     ```
 
 ## Convenient ROS packages
 
@@ -76,3 +110,4 @@ ROS是一个功能很强大的工具，这个仓库包含了ROS的一些常用�
    除了上面的限制方法，还可以添加lazy参数，来减少不必要的消息发布.
    
    topic_tools除了throttle这个node之外，还有一些其他的节点提供了其他功能，参考http://wiki.ros.org/topic_tools
+

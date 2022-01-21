@@ -6,9 +6,10 @@
             "type": "shell",
             "command": "catkin_make",
 			"args": [
+				// "-j 10",
 				"--directory",
 				"${workspaceFolder}",
-				"-DCMAKE_BUILD_TYPE=Debug",
+				// "-DCMAKE_BUILD_TYPE=Debug",
 				"-DCMAKE_EXPORT_COMPILE_COMMANDS=Yes"
 			],//如果需要在命令后面加一些后缀，可以写在这里，比如-DCATKIN_WHITELIST_PACKAGES=“pac1;pac2”
             "group": {"kind":"build","isDefault":true},

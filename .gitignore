@@ -3,3 +3,4 @@ devel/
 # .gitignore
 src/CMakeLists.txt
 .catkin_workspace
+src/test/

@@ -9,5 +9,8 @@
     ],
     "restructuredtext.confPath": "",
     "python.pythonPath": "/usr/bin/python",
-    "ros.distro": "melodic"
+    "ros.distro": "melodic",
+    "files.associations": {
+        "thread": "cpp"
+    }
 }

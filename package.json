@@ -1,0 +1,27 @@
+{
+  "name": "ros_example",
+  "version": "0.0.0",
+  "description": "[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -u",
+    "release": "release-it --npm.skipChecks --no-git.requireCleanWorkingDir --no-publish --no-git.push --no-git.commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanliang-wang/ros_example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanliang-wang/ros_example/issues"
+  },
+  "homepage": "https://github.com/yanliang-wang/ros_example#readme",
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  }
+}
