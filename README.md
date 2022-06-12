@@ -58,6 +58,32 @@ catkin_make
 
 > 参考：https://www.ncnynl.com/archives/201702/1296.html
 
+### 2. Action Demo
+
+Action是ROS中一种双向异步的通信方法，这种机制应该是通过topic的形式来实现的（毕竟topic是单向异步的，双向的topic就可以实现双向异步，而且在action server和client启动时，会产生5个和状态相关的topic，这也验证了这种说法）
+
+a. 常规使用1
+
+```c++
+  ac.sendGoal(goal);  
+//wait for the action to return
+  bool finished_before_timeout = ac.waitForResult(ros::Duration(30.0));
+  if (finished_before_timeout) ...
+```
+
+> 在ac发送goal之后，可以指定等待多久时间，而不会像service那种一直阻塞等待结果的返回
+>
+> 这个例子在common_tutorials/actionlib_tutorials里
+
+b. 常规使用2
+
+```c++
+ac.sendGoal(goal, &doneCB, &activeCB, &feedbackCB);
+ros::spin();
+```
+
+> 这种使用方法在send goal时指定了server开始的回调函数，feedback的回调函数，done的回调函数，可以试试掌握server的状态
+
 ## Tricks
 
 1. 减少topic带宽的方式
