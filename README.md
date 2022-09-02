@@ -113,6 +113,12 @@ ros::spin();
      rosinstall DEPENDENCY_LOCATION XXX.rosinstall
      ```
 
+4. 编译选项
+
+   屏蔽一些package的编译：在不想被编译的package目录下新建**CATKIN_IGNORE**的空文件即可，mata-package同样支持。
+
+   编译指定的package：`catkin_make -DCATKIN_WHITELIST_PACKAGES="pkg1, pkg2.."`
+
 ## Convenient ROS packages
 
 1. topic_tools
